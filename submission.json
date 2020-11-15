@@ -1,0 +1,7 @@
+{
+  "config": ["config/cora_params.json", "config/twitch_params.json"],
+  "build": "run.py",
+  "library": ["src"],
+  "notebook": ["notebook.ipynb"],
+  "targets": ["src/etl.py", "src/model.py", "src/utils.py"]
+}
