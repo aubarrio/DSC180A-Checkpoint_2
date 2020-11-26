@@ -1,0 +1,10 @@
+{
+  "fp": "test/testdata/random",
+  "source": "cora",
+  "hidden": 16,
+  "dropout": 0.5,
+  "lr": 0.01,
+  "weight_decay": 5e-4,
+  "lam": 1,
+  "epochs": 5
+}
