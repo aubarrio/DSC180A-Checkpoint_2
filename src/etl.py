@@ -4,6 +4,8 @@ from src.utils import *
 def complete(fp, source, hidden, dropout, lr, weight_decay, lam, epochs):
     if source == "cora":
         data, edges = read_cora_data(fp)
+    elif source == "test":
+        data, edges = read_test_data(fp)
     elif source == "twitch":
         data, edges = read_twitch_data(fp)
 

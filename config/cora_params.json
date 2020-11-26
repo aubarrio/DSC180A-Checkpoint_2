@@ -1,5 +1,5 @@
 {
-  "fp": "data/raw/cora",
+  "fp": "test/testdata",
   "source": "cora",
   "hidden": 16,
   "dropout": 0.5,

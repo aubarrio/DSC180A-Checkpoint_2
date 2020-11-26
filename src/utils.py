@@ -8,6 +8,20 @@ import torch
 import pandas as pd
 import json
 
+def read_test_data(fp):
+    data, edges = [], []
+    for ro, di, files in os.walk(fp):
+        for file in files:
+            if '.content' in file:
+                with open(os.path.join(ro, file),'r') as f:
+                    data.extend(f.read().splitlines())
+            elif '.cites' in file:
+                with open(os.path.join(ro, file),'r') as f:
+                    edges.extend(f.read().splitlines())
+    data = shuffle(data)
+    return data, edges
+
+
 def read_cora_data(fp):
     data, edges = [], []
     for ro, di, files in os.walk(fp):
@@ -15,7 +29,7 @@ def read_cora_data(fp):
             if '.content' in file:
                 with open(os.path.join(ro, file),'r') as f:
                     data.extend(f.read().splitlines())
-            elif 'cites' in file:
+            elif '.cites' in file:
                 with open(os.path.join(ro, file),'r') as f:
                     edges.extend(f.read().splitlines())
     data = shuffle(data)
